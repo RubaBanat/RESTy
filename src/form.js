@@ -31,13 +31,13 @@ class Form extends React.Component {
                         <br/>
                         <div id='methods'>
                             <input type='radio' id='GET' name='method' value='GET' required />
-                            <label >GET</label>
+                            <label for='GET' >GET</label>
                             <input type='radio' id='POST' name='method' value='POST' />
-                            <label >POST</label>
+                            <label for='POST'>POST</label>
                             <input type='radio' id='PUT' name='method' value='PUT' />
-                            <label >PUT</label>
+                            <label for='PUT'>PUT</label>
                             <input type='radio' id='DELETE' name='method' value='DELETE' />
-                            <label >DELETE</label>
+                            <label for='DELETE'>DELETE</label>
                         </div>
                     </form>
                     <div id='output'>
