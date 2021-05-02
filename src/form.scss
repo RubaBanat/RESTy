@@ -22,19 +22,20 @@ main {
         }
   
         #methods {
-            label {
+            label{
                 background: rgba(128, 128, 128, 0.336);
                 margin: 10px;
                 border: gray solid 1px;
                 padding: 5px;
                 border-radius: 5px;
+                cursor: pointer;
                 
             }
-            input{
-            cursor: pointer;
+            input[type="radio"]{
+              visibility:hidden;
           }
-          label:hover{
-            background: none;
+            input[type="radio"]:checked + label{
+              background: none;
           }
         }
       }
