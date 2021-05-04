@@ -11,7 +11,7 @@ describe('testing the App', () => {
   });
   test('the Footer should be rendered', () => {
     render(<App />);
-    const footerElement = screen.getByText(/&copy; 2021 Ruba Banat/i);
+    const footerElement = screen.getByText(/2021 Ruba Banat/i);
     expect(footerElement).toBeInTheDocument();
   });
 });
