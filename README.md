@@ -101,6 +101,11 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/t
 ![uml](./assets/umlReact.png)
 
 ---
+### Deployed Link 
+
+[RESTy](https://relaxed-swanson-d537b0.netlify.app/)
+
+---
 
 ### SandBox 
 
