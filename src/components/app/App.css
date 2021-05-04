@@ -39,12 +39,12 @@
 }
 #history{
   box-sizing: border-box;
-  border: 2px solid rgba(97, 87, 87, 0.61);
+  /* border: 2px solid rgba(97, 87, 87, 0.61); */
   float: left;
   margin-top: 60px;
   width:35%;
   padding: 5px;
   overflow-y: scroll;
-  height: 300px;
+  height: 260px;
   margin-left: 20px;
 }
