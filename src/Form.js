@@ -16,9 +16,9 @@ const Form = (props) => {
             console.log('url', e.target.url.value);
             superagent.get(e.target.url.value).then(data => {
                 // [(e.target.method.value.toLowerCase())]
-                console.log(data.body.results);
+                console.log('response',data.body);
                 console.log(data.headers);
-                props.updateState({ data: data.body.results, headers: data.headers, count: data.body.count , method : e.target.method.value , url:  e.target.url.value})
+                props.updateState({ data: data.body, headers: data.headers, count: data.body.count , method : e.target.method.value , url:  e.target.url.value})
             })
 
         } catch (error) {
