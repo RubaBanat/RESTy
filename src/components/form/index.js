@@ -2,13 +2,7 @@ import React from 'react';
 import superagent from 'superagent';
 import './form.scss';
 
-// class Form extends React.Component {
-//     constructor(props) {
-//         super(props);
-//     }
 const Form = (props) => {
-
-
     const clickHandler = async (e) => {
         e.preventDefault();
         try {
@@ -17,15 +11,14 @@ const Form = (props) => {
             console.log('url', e.target.url.value);
             let method = e.target.method.value.toLowerCase();
             let url = e.target.url.value;
-            if (method === 'get'){
-              
+            if (method === 'get'){  
                 props.toggle();
                 superagent[method](url).then(data => {
                     console.log('response', data.body);
                     console.log(data.headers);
                     props.toggle();
                     props.storage({method , url , data: data.body});
-                    props.updateState({ data: data.body, headers: data.headers, count: data.body.count, method: e.target.method.value, url: e.target.url.value })
+                    props.updateState({ data: data.body, headers: data.headers, count: data.body?.count, method: e.target.method.value, url: e.target.url.value })
                 })
             }else {
                 props.toggle();
@@ -33,6 +26,9 @@ const Form = (props) => {
                     props.storage({method , url , data: data.body});
                     props.toggle();
                     props.updateState({ data: data.body, headers: data.headers, count: data.body.count, method: e.target.method.value, url: e.target.url.value })
+                }).catch (e => {
+                    console.log('error',e.message);
+                    props.updateState({ data: e.message, headers:e.message, count:e.message, method:e.message, url: e.message })  
                 })
             }
         } catch (error) {
@@ -46,7 +42,7 @@ const Form = (props) => {
                 <form onSubmit={clickHandler}>
                     <div id='input'>
                         <label htmlFor=""> URL:</label>
-                        <input type="url" name="url" id="url" value={props.api.url} />
+                        <input type="url" name="url" id="url" defaultValue={props.api.url || props.localStorage?.url}/>
                         <button type='submit'> GO! </button>
                     </div>
                     <br />
